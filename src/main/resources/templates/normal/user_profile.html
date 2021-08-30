@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Add_contact</title>
+</head>
+<body>
+
+<!-- this will put into the content of base.html -->
+<section>
+
+
+
+<div class="container">
+
+ <div class="card">
+ 	<div class="card-body">
+ 	  	
+  <img  style="width:200px;height:200px"  th:src="@{'/image/'+${user.imageUrl}}" alt="image" class="mx-auto d-block  contact_profile">
+ 	
+ 	<h1 class="text-center"><span th:text="${user.name}"></span></h1>
+ 	
+ 	<table class="table table-bordered text-center">
+  
+  <tbody>
+ 
+    <tr>
+      <th scope="row">USERID</th>
+    <td><span th:text="${user.id}"></span></td>
+    </tr>
+
+    <tr>
+      <th scope="row">EMAIL</th>
+    <td><span th:text="${user.email}"></span></td>
+    </tr>
+    
+     <tr>
+      <th scope="row">IS-ACTIVE</th>
+    <td><span th:text="${user.enabled}"></span></td>
+    </tr>
+    
+     <tr>
+      <th scope="row">ABOUT</th>
+    <td><span th:text="${user.about}"></span></td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 	
+ 	</div>
+ </div>
+
+</div>
+
+<script>
+$(document).ready( () =>{
+  $(".item").removeClass("active");
+  $("#user-profile-link").addClass("active");
+})
+</script>
+
+</section>
+	
+</body>
+</html>
